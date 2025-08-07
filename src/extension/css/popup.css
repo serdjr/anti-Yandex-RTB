@@ -1,0 +1,9 @@
+body {
+  font-family: 'Arial', sans-serif;
+}
+input[type="checkbox"] {
+  accent-color: #2563eb;
+}
+label {
+  cursor: pointer;
+}
