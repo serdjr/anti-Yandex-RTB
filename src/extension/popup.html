@@ -3,15 +3,80 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ad Blocker Settings</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="popup.css">
+  <title>RTB Blocker</title>
+  <link rel="stylesheet" href="css/popup.css">
 </head>
-<body class="bg-gray-100 p-4 w-80">
-  <h1 class="text-lg font-bold mb-4 text-gray-800">Ad Blocker Settings</h1>
-  <div id="checkboxes" class="space-y-2">
-    <!-- Checkboxes will be populated by popup.js -->
+<body>
+  <div class="app">
+    <header class="app__header">
+      <div>
+        <p class="eyebrow">Smart Protection</p>
+        <h1>RTB Blocker</h1>
+      </div>
+      <span class="status" id="statusBadge">Active</span>
+    </header>
+
+    <section class="card card--glow">
+      <div class="card__row">
+        <div>
+          <p class="card__title">Current site</p>
+          <p class="card__subtitle" id="currentSite">Loading…</p>
+        </div>
+        <button class="ghost-button" id="whitelistButton">Whitelist</button>
+      </div>
+      <div class="stat-grid">
+        <div>
+          <p class="stat-label">Blocked today</p>
+          <p class="stat-value" id="blockedCount">0</p>
+        </div>
+        <div>
+          <p class="stat-label">Cleanups</p>
+          <p class="stat-value" id="cleanupCount">0</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="toggle">
+        <div>
+          <p class="toggle__title">Block ad requests</p>
+          <p class="toggle__subtitle">Stops RTB calls before they load.</p>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="toggleBlockRequests">
+          <span class="slider"></span>
+        </label>
+      </div>
+      <div class="toggle">
+        <div>
+          <p class="toggle__title">Clean recommendation widgets</p>
+          <p class="toggle__subtitle">Removes Yandex-style blocks on the page.</p>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="toggleCleanWidgets">
+          <span class="slider"></span>
+        </label>
+      </div>
+      <div class="toggle">
+        <div>
+          <p class="toggle__title">Stealth mode</p>
+          <p class="toggle__subtitle">Hides leftover ad containers quietly.</p>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="toggleStealthMode">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </section>
+
+    <section class="card card--actions">
+      <button class="primary-button" id="runCleanup">Run cleanup now</button>
+      <button class="secondary-button" id="resetSettings">Reset settings</button>
+    </section>
+
+    <p class="footnote">Protection updates automatically. Whitelisted sites are always respected.</p>
   </div>
-  <script src="popup.js"></script>
+
+  <script src="js/popup.js"></script>
 </body>
 </html>
