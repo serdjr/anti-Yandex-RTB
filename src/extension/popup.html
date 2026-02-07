@@ -10,27 +10,36 @@
   <div class="app">
     <header class="app__header">
       <div>
-        <p class="eyebrow">Smart Protection</p>
-        <h1>RTB Blocker</h1>
+        <p class="eyebrow" data-i18n="eyebrow">Smart Protection</p>
+        <h1 data-i18n="title">RTB Blocker</h1>
       </div>
-      <span class="status" id="statusBadge">Active</span>
+      <div class="header-controls">
+        <span class="status" id="statusBadge">Active</span>
+        <div class="language-picker">
+          <span class="language-label" data-i18n="languageLabel">Language</span>
+          <select id="languageSelect" aria-label="Language">
+            <option value="ru">Русский</option>
+            <option value="en">English</option>
+          </select>
+        </div>
+      </div>
     </header>
 
     <section class="card card--glow">
       <div class="card__row">
         <div>
-          <p class="card__title">Current site</p>
+          <p class="card__title" data-i18n="currentSiteLabel">Current site</p>
           <p class="card__subtitle" id="currentSite">Loading…</p>
         </div>
         <button class="ghost-button" id="whitelistButton">Whitelist</button>
       </div>
       <div class="stat-grid">
         <div>
-          <p class="stat-label">Blocked today</p>
+          <p class="stat-label" data-i18n="blockedToday">Blocked today</p>
           <p class="stat-value" id="blockedCount">0</p>
         </div>
         <div>
-          <p class="stat-label">Cleanups</p>
+          <p class="stat-label" data-i18n="cleanups">Cleanups</p>
           <p class="stat-value" id="cleanupCount">0</p>
         </div>
       </div>
@@ -39,8 +48,8 @@
     <section class="card">
       <div class="toggle">
         <div>
-          <p class="toggle__title">Block ad requests</p>
-          <p class="toggle__subtitle">Stops RTB calls before they load.</p>
+          <p class="toggle__title" data-i18n="blockRequestsTitle">Block ad requests</p>
+          <p class="toggle__subtitle" data-i18n="blockRequestsSubtitle">Stops RTB calls before they load.</p>
         </div>
         <label class="switch">
           <input type="checkbox" id="toggleBlockRequests">
@@ -49,8 +58,8 @@
       </div>
       <div class="toggle">
         <div>
-          <p class="toggle__title">Clean recommendation widgets</p>
-          <p class="toggle__subtitle">Removes Yandex-style blocks on the page.</p>
+          <p class="toggle__title" data-i18n="cleanWidgetsTitle">Clean recommendation widgets</p>
+          <p class="toggle__subtitle" data-i18n="cleanWidgetsSubtitle">Removes Yandex-style blocks on the page.</p>
         </div>
         <label class="switch">
           <input type="checkbox" id="toggleCleanWidgets">
@@ -59,8 +68,8 @@
       </div>
       <div class="toggle">
         <div>
-          <p class="toggle__title">Stealth mode</p>
-          <p class="toggle__subtitle">Hides leftover ad containers quietly.</p>
+          <p class="toggle__title" data-i18n="stealthTitle">Stealth mode</p>
+          <p class="toggle__subtitle" data-i18n="stealthSubtitle">Hides leftover ad containers quietly.</p>
         </div>
         <label class="switch">
           <input type="checkbox" id="toggleStealthMode">
@@ -70,11 +79,11 @@
     </section>
 
     <section class="card card--actions">
-      <button class="primary-button" id="runCleanup">Run cleanup now</button>
-      <button class="secondary-button" id="resetSettings">Reset settings</button>
+      <button class="primary-button" id="runCleanup" data-i18n="runCleanup">Run cleanup now</button>
+      <button class="secondary-button" id="resetSettings" data-i18n="resetSettings">Reset settings</button>
     </section>
 
-    <p class="footnote">Protection updates automatically. Whitelisted sites are always respected.</p>
+    <p class="footnote" data-i18n="footnote">Protection updates automatically. Whitelisted sites are always respected.</p>
   </div>
 
   <script src="js/popup.js"></script>
